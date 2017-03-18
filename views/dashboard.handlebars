@@ -1,9 +1,10 @@
-<h2>user dashboard
-{{user.username}}'s dashboard</h2>
 <form action="/logout" method="GET">
     <button type="submit">Logout</button>
 </form>
-<div class="container">
-
+<div class="container" id="dashboard-info">
+    <h2>user dashboard
+{{user.username}}'s dashboard</h2>
+    <h3>{{user.preference}}</h3>
+    <h3>{{user.role}}</h3>
 </div>
 

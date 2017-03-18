@@ -1,16 +1,3 @@
-{{!--<h2>Mentor Signup</h2>
-<form action="/signup-user" method="post">
-      <label>Username</label>
-      <input  id="username" name="username" placeholder="Username" type="text" />
-      <label>Password</label>
-      <input id="password" name="password" placeholder="Password" type="password" >
-      <input id="role" name="role" type="hidden" value="mentor"/>
-      <div class="form-actions">
-          <button type="submit" class="">Sign Up</button>
-          <div class="clearfix"></div>
-      </div>
-  </form>--}}
-
   	<div id="mentorModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 
@@ -21,24 +8,27 @@
 			<h4 class="modal-title">Modal Header</h4>
 		  </div>
 		  <div class="modal-body">
-				<form>
+				<form action="/signup-user" method="POST">
 					  <div class="form-group">
 						<label for="email">Email address:</label>
-						<input type="email" class="form-control" id="email">
+						<input type="email" class="form-control" id="email" name="email">
 					  </div>
 					  <div class="form-group">
 						<label for="pwd">Password:</label>
-						<input type="password" class="form-control" id="pwd">
+						<input type="password" class="form-control" id="pwd" name="pwd">
 					  </div>
 					  <div class="form-group">
 						  <label for="sel1">What do you want to teach?</label>
-						  <select class="form-control" id="sel1">
+						  <select class="form-control" id="sel1" name="sel1">
 							<option value="js">Javascript</option>
 							<option value="pyth">Python</option>
 							<option value="ruby">Ruby</option>
 							<option value="java">Java</option>
 							<option value="c">C++</option>
 						  </select>
+					</div>
+					<div class="form-group">
+							<input type="hidden" value="mentor" name="role">
 					</div>
 					  <div class="checkbox">
 						<label><input type="checkbox"> Remember me</label>
