@@ -26,9 +26,9 @@ routes.post('/authenticate', passport.authenticate('local', {
 
 routes.get('/logout', middleware.destroySession);
 
-routes.get('/login', function(req, res) {
-  res.render('/');
-});
+// routes.get('/login', function(req, res) {
+//   res.render('/');
+// });
 
 routes.get('/signup/:role', function(req, res) {
   var role = req.params.role;
