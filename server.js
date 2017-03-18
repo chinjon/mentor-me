@@ -1,17 +1,17 @@
-var express = require('express'),
-routes = require('./routes'),
+const express = require('express'),
+path = require('path'),
 app = express(),
 db = require('./models'),
 passport = require('passport'),
-passportConfig = require('./config/passport');
-var exphbs  = require('express-handlebars');
+passportConfig = require('./config/passport'),
+exphbs  = require('express-handlebars');
 
-var bodyParser = require('body-parser')
-var cookieParser = require('cookie-parser')
-var session = require('express-session');
-var errorhandler = require('errorhandler');
+const bodyParser = require('body-parser'),
+cookieParser = require('cookie-parser'),
+session = require('express-session'),
+errorhandler = require('errorhandler');
 
-app.use('/public', express.static(__dirname + '/public'));
+app.use(express.static('./public'));
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -39,6 +39,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+var routes = require('./routes/index.js');
 app.use('/', routes);
 
 if (process.env.NODE_ENV === 'development') {

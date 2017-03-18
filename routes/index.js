@@ -2,6 +2,7 @@ const routes = require('express').Router();
 const middleware = require('../config/middleware');
 const passport = require('passport');
 const db = require('../models');
+const path = require('path');
 
 routes.get('/', (req, res) => {
   res.render('index');
