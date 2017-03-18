@@ -1,0 +1,118 @@
+/*!
+ * Start Bootstrap - The Big Picture (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+
+.full {
+	background: url(../links/home-page-bg.png)no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.profile-bg {
+	background-color: #6AB8CC;
+}
+
+.logo {
+	position: relative;
+	display: inline-block;
+	height: 50px;
+}
+
+.logo-image {
+	width:40px; 
+	float: left; 
+	margin-right: 10px;
+	position: absolute;
+	margin-top: -10px;
+	
+}
+
+.logo-text {
+	float: left;
+	margin-left: 50px;
+}
+
+.navbar-brand {
+	color:#d7d7d7;
+	font-family: 'Lato', sans-serif;
+	width: 200px;
+	
+}
+
+a {
+	color:#cccccc;
+	font-family: 'Lato', sans-serif;
+}
+
+.title {
+	font-family: 'Lato', sans-serif;
+	font-size: 60px;
+	color: #ebebeb;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	line-height: 50px;
+}
+
+.subTitle {
+	font-family: 'Noto Serif', serif;
+	font-size: 30px;
+	color: #ebebeb;
+	line-height: 40px;
+}
+
+.text {
+	color: #ebebeb;
+	font-size: 20px;
+	font-family: 'Noto Serif', serif;
+}
+
+.margin {
+	margin-top: 60px;
+}
+/* form style */
+.form-style {
+	background-color: hsla(0,0%,80%,0.75);
+	padding: 20px;
+}
+/* list bg */
+.list-group-item.active, .list-group-item.active:hover {
+	background-color: #d94141;
+}
+
+.list-group-item {
+	background-color: transparent;
+	color: #ebebeb;
+	border: none;
+}
+
+.mentee-right {
+	background-color: transparent;
+	border: none;
+}
+
+.text-mentee {
+	float: left;
+}
+
+.left-arrow {
+	height:40px; 
+	float: left; 
+}
+
+.right-arrow {
+	height:40px; 
+	float: right; 
+}
+
+
+
+
