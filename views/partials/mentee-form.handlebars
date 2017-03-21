@@ -1,58 +1,42 @@
-{{!--<h2>Mentee Signup</h2>
-<form action="/signup-user" method="post">
-      <label>Username</label>
-      <input  id="username" name="username" placeholder="Username" type="text" />
-      <label>Password</label>
-      <input id="password" name="password" placeholder="Password" type="password" />
-       <input id="role" name="role" type="hidden" value="mentee"/>
-      <div class="form-actions">
-          <button type="submit" class="">Sign Up</button>
-          <div class="clearfix"></div>
-      </div>
-  </form>--}}
+<!-- Mentee Modal -->
+    <div id="menteeModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
-  <div id="menteeModal" class="modal fade" role="dialog">
-	  <div class="modal-dialog">
-
-		<!-- Modal content-->
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<h4 class="modal-title">Modal Header</h4>
-		  </div>
-		  <div class="modal-body">
-				<form action="/signup-user" method="POST">
-					  <div class="form-group">
-						<label for="email">Email address:</label>
-						<input type="email" class="form-control" id="email" name="email">
-					  </div>
-					  <div class="form-group">
-						<label for="pwd">Password:</label>
-						<input type="password" class="form-control" id="pwd" name="pwd">
-					  </div>
-					  <div class="form-group">
-						  <label for="sel1">What do you want to learn?</label>
-						  <select class="form-control" id="sel1" name="sel1">
-							<option value="js">Javascript</option>
-							<option value="pyth">Python</option>
-							<option value="ruby">Ruby</option>
-							<option value="java">Java</option>
-							<option value="c">C++</option>
-						  </select>
-					</div>
-					<div class="form-group">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="/signup-user" method="post">
+                        <div class="form-group">
+                            <label for="email">Email address:</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd">
+                        </div>
+                        <div class="form-group">
+                            <label for="sel1">What do you want to learn?</label>
+                            <select class="form-control" id="sel1">
+														<option value="js">Javascript</option>
+														<option value="pyth">Python</option>
+														<option value="ruby">Ruby</option>
+														<option value="java">Java</option>
+														<option value="c">C++</option>
+												  </select>
+                        </div>
+                        <div class="form-group">
 							<input type="hidden" value="mentee" name="role">
 					</div>
-					  <div class="checkbox">
-						<label><input type="checkbox"> Remember me</label>
-					  </div>
-					  <button type="submit" class="btn btn-default">Submit</button>
-				</form>
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		  </div>
-		</div>
-
-	  </div>
-	</div>
+                        <div class="checkbox">
+                            <label><input type="checkbox">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-default submit" data-dismiss="modal">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

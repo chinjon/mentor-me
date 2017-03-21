@@ -26,14 +26,16 @@ routes.post('/authenticate', passport.authenticate('local', {
 
 routes.get('/logout', middleware.destroySession);
 
-// routes.get('/login', function(req, res) {
-//   res.render('/');
-// });
-
-routes.get('/signup/:role', function(req, res) {
-  var role = req.params.role;
-  res.render(role+'-signup');
+routes.get('/login', function(req, res) {
+  // res.render('/');
+  console.log(user)
+  res.send(user);
 });
+
+// routes.get('/signup/:role', function(req, res) {
+//   var role = req.params.role;
+//   res.render(role+'-signup');
+// });
 
 //create a new user
 routes.post('/signup-user', function(req, res) {
@@ -45,8 +47,8 @@ routes.post('/signup-user', function(req, res) {
             console.log(err)
             //return res.redirect('/');
           } else {
-            res.redirect('/dashboard');    
-            // res.json(user);
+            // res.redirect('/dashboard');    
+            res.json(user);
           }
         });
         
