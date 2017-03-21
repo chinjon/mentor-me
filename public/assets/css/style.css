@@ -96,6 +96,13 @@ a {
 
 .text-mentee {
 	float: left;
+	position: relative;
+	padding-top: 5px;
+}
+
+.text-mentor {
+	position: relative;
+	padding-top: 5px;
 }
 
 .left-arrow {
@@ -105,8 +112,24 @@ a {
 
 .right-arrow {
 	height:40px; 
-	float: right; 
 }
+
+/*slider css*/
+.outer {
+  overflow: hidden;
+  position: relative;
+}
+
+.inner {
+  position: absolute;
+  right: -1200px;
+ }
+
+.inner2 {
+  position: absolute;
+  left: -1200px;
+ }
+
 
 
 
