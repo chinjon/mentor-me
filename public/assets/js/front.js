@@ -14,12 +14,14 @@ $(document).ready(function() {
 	 });
 	$('.submit2').click(function(event){
 		event.preventDefault();
-		 $('#third').show(function() {
+		$.post("signup-user", user).done(function(user){
+			$('#third').show(function() {
 			 $("#third").animate({left: '0vw'}, 1000);
 			 $("#first").animate({left: '85vw'}, 1000, function(){
 				 $('#first').hide();
 			 });
 		 });
+		}); 
 	 });
 });
 
