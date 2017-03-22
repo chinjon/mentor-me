@@ -19,14 +19,16 @@
   },
   "homepage": "https://github.com/chinjon/mentor-me#readme",
   "dependencies": {
-    "sequelize": "^3.30.2",
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "errorhandler": "^1.5.0",
     "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.1",
     "mysql": "^2.12.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "express-session": "^1.15.1",
-    "express-handlebars": "^3.0.0",
-    "cookie-parser": "^1.4.3"
+    "sequelize": "^3.30.2"
   }
 }
