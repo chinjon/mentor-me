@@ -8,7 +8,15 @@ routes.get('/', (req, res) => {
   res.render('index');
 });
 
-routes.get('/dashboard', function(req, res, next) {
+// routes.get('/dashboard', function(req, res, next) {
+//   console.log('going to dashboard'); next(null);
+// }, middleware.authenticated, function(req, res) {
+//   res.render('dashboard', {
+//     user: req.user
+//   });
+// });
+
+routes.get('/sign-in', function(req, res, next) {
   console.log('going to dashboard'); next(null);
 }, middleware.authenticated, function(req, res) {
   res.render('dashboard', {
@@ -19,7 +27,8 @@ routes.get('/dashboard', function(req, res, next) {
 
 //login a new user
 routes.post('/authenticate', passport.authenticate('local', {
-  successRedirect: '/dashboard',
+  // successRedirect: '/dashboard',
+  successRedirect: '/sign-in',
   failureRedirect: '/'
 }));
 
@@ -28,8 +37,24 @@ routes.get('/logout', middleware.destroySession);
 
 routes.get('/login', function(req, res) {
   // res.render('/');
-  console.log(user)
-  res.send(user);
+  //console.log("inside login",req.body.user)
+  res.render('/')
+  // res.send(user);
+
+  // if(user.preference === "mentor"){
+  //   res.render('index', {
+  //     whichPartial: ()=>{
+  //       return "mentor-page";
+  //     }
+  //   });
+  // } else if(user.preference === "mentee") {
+  //   res.render('index', {
+  //     whichPartial: ()=>{
+  //       return "mentee-page";
+  //     }
+  //   })
+  // }
+
 });
 
 // routes.get('/signup/:role', function(req, res) {

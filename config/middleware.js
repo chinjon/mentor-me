@@ -4,6 +4,7 @@ exports.authenticated = function(req, res, next) {
     next();
   } else {
     res.redirect('/login');
+    // res.send(user)
   }
 };
 

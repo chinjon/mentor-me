@@ -4,7 +4,22 @@ $(document).ready(function() {
 	 $('#third').hide();
 
 
+	 $('#login-btn').click(function(event){
+		 event.preventDefault();
 
+		 var email = $('#login-email').val().trim();
+		 var pwd = $('#login-pwd').val().trim();
+
+		 var user = {
+			 username: email,
+			 password: pwd
+		 }
+
+		 $.post("authenticate", user).done(function(user){
+			 console.log("success");
+		 })
+
+	 })
 		
 
 	 
