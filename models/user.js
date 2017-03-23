@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
         console.log('validPassword password', password);
         console.log('validPassword passwd', passwd);
         bcrypt.compare(password, passwd, function(err, isMatch) {
-          console.log('isMatch', isMatch);
+       //   console.log('isMatch', isMatch);
           if (isMatch) {
             console.log('found match');
             return callback(null, true);
@@ -39,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
               return next(err);
             }      
             user.password = hash;
-            console.log('hash', hash);
+          //  console.log('hash', hash);
             return next(null, user);
         });
     });

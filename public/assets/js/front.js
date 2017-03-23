@@ -16,7 +16,8 @@ $(document).ready(function() {
 		 }
 
 		 $.post("authenticate", user).done(function(user){
-			 console.log("success");
+			 console.log("success", user);
+			 console.log(user.preference)
 		 })
 
 	 })

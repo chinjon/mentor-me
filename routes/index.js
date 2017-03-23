@@ -17,7 +17,7 @@ routes.get('/', (req, res) => {
 // });
 
 routes.get('/sign-in', function(req, res, next) {
-  console.log('going to dashboard'); next(null);
+ // console.log('going to dashboard'); next(null);
 }, middleware.authenticated, function(req, res) {
   res.render('dashboard', {
     user: req.user
@@ -32,7 +32,7 @@ routes.get('/sign-in', function(req, res, next) {
 //login a new user
 routes.post('/authenticate', passport.authenticate('local', {
   // successRedirect: '/dashboard',
-  successRedirect: '/sign-in',
+  successRedirect: '/login',
   failureRedirect: '/'
 }));
 
@@ -41,8 +41,10 @@ routes.get('/logout', middleware.destroySession);
 
 routes.get('/login', function(req, res) {
   // res.render('/');
-  //console.log("inside login",req.body.user)
-  res.render('/')
+  // req.body is returning empty
+  console.log("inside login",req.user.dataValues)
+
+  res.json(req.user.dataValues)
   // res.send(user);
 
   // if(user.preference === "mentor"){
@@ -68,13 +70,13 @@ routes.get('/login', function(req, res) {
 
 //create a new user
 routes.post('/signup-user', function(req, res) {
-  console.log(req);
+//  console.log(req);
   db.User.find({where: {username: req.email}}).then(function(user) {
     if (!user) {
       db.User.create({username: req.body.username, password: req.body.password, role: req.body.role, preference: req.body.preference}).then(function(user) {
         req.logIn(user, function(err) {
           if (err) {
-            console.log(err)
+      //      console.log(err)
             //return res.redirect('/');
           } else {
             // res.redirect('/dashboard');    
@@ -83,7 +85,7 @@ routes.post('/signup-user', function(req, res) {
         });
         
       }).catch(function(err) {
-        console.log(err)
+      //  console.log(err)
         res.redirect('/');
       });
     }
