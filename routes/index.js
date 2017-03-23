@@ -25,6 +25,10 @@ routes.get('/sign-in', function(req, res, next) {
 });
 
 
+// https://vickev.com/#!/article/authentication-in-single-page-applications-node-js-passportjs-angularjs
+
+// http://www.webdeveasy.com/single-page-application-authentication/
+
 //login a new user
 routes.post('/authenticate', passport.authenticate('local', {
   // successRedirect: '/dashboard',
