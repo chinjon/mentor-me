@@ -74,8 +74,8 @@ $(document).ready(function() {
     		email: $('#email').val().trim(),
     		password: $('#pwd').val().trim(),
     	};
-    	$.post("authenticate", user).done(function(user){
-             console.log("success", user);
+    	$.post("authenticate", userLogin).done(function(user){
+             console.log("success", userLogin);
 
 
              $.get('user-logged-in').done(function(data){

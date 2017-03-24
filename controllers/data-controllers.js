@@ -14,6 +14,7 @@ router.get('/user-logged-in', (req, res)=>{
     // db.User
     // need to make a call for current user?
     // or req.body will contain user info?
+    console.log(req.user.dataValues.username)
     var loggedIn= req.user.dataValues.username;
     db.User.findOne({
         where: {
