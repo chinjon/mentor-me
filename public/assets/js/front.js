@@ -3,6 +3,7 @@ $(document).ready(function() {
 	 $('#second').hide();
 	 $('#third').hide();
 
+
 	 
 	$('.submit').click(function(event){
 		event.preventDefault();
