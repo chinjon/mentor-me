@@ -9,12 +9,14 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		var email= $("#email-mentee").val().trim();
+		var name = $("#name-mentee").val().trim();
 		var pwd = $("#pwd-mentee").val().trim();
 		var role = $("#role").val();
 		var pref = $("#sel1").val();
 
 		var user = {
 			username: email,
+			name:name,
 			password: pwd,
 			role: role,
 			preference: pref
@@ -39,12 +41,14 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		var email= $("#email-mentor").val().trim();
+		var name = $("#name-mentor").val().trim();
 		var pwd = $("#pwd-mentor").val().trim();
 		var role = $("#role").val();
 		var pref = $("#sel1").val();
 
 		var user = {
 			username: email,
+			name: name,
 			password: pwd,
 			role: role,
 			preference: pref
