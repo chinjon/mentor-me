@@ -10,21 +10,42 @@ const router = express.Router();
 
 // https://www.reddit.com/r/node/comments/4ieetf/handling_multiple_sequelize_queries/d2xewcw/
 
-router.get('/', (req, res)=>{
-    // db.User
-    // need to make a call for current user?
-    // or req.body will contain user info?
+// router.get('/', (req, res)=>{
+//     // db.User
+//     // need to make a call for current user?
+//     // or req.body will contain user info?
+// })
+
+// get user login
+router.get('/user-login-data', (req, res)=>{
+    var loggedUser = req.user.dataValues.username;
+    db.User.findOne({
+        where: {
+            username: loggedUser
+        }
+    }).then((data)=>{
+        console.log(data.dataValues)
+        res.json(data)
+    })
 })
 
-router.get('/suggested-mentors', (req, res)=>{
+//  
+
+router.get('/suggested-users', (req, res)=>{
     // find all users with same preference
-    var userPref = req.body.preference
+    var userPref = req.user.dataValues.preference;
+    var userRole = req.user.dataValues.role;
+    // console.log(req.user.dataValues.role);
     db.User.findAll({
         where: {
-            preference: userPref
+            preference: userPref,
+            role: {
+                $notLike: userRole
+            }
         }
     }).then((data)=>{
         //console.log("data is passing")
+        console.log(data)
         res.json(data)
     })
 });

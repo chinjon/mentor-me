@@ -17,8 +17,20 @@ $(document).ready(function() {
 
 		 $.post("authenticate", user).done(function(user){
 			 console.log("success", user);
-			 console.log(user.preference)
-		 })
+			 console.log(user.preference);
+			 // get user data 
+
+			 $.get('user-login-data').done(function(data){
+				 console.log(data)
+			 })
+
+			//  $.get("suggested-users").done(function(data){
+			// 	 console.log("suggested users",data)
+			//  })
+		 });
+
+
+
 
 	 })
 		
@@ -49,6 +61,10 @@ $(document).ready(function() {
 				 $('#first').hide();
 			 });
 		 });
+
+		$("#user-greeting").html(user.username);
+		$("#user-pref").html(user.preference);
+
 		 });
 	 });
 	$('.submit2').click(function(event){
@@ -75,6 +91,9 @@ $(document).ready(function() {
 			 });
 		 });
 		}); 
+
+		$("#user-greeting").html(user.username);
+		$("#user-pref").html(user.preference);
 	 });
 });
 

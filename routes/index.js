@@ -68,6 +68,8 @@ routes.get('/login', function(req, res) {
 //   res.render(role+'-signup');
 // });
 
+// https://gist.github.com/chrislkeller/3230081
+
 //create a new user
 routes.post('/signup-user', function(req, res) {
 //  console.log(req);
@@ -79,7 +81,14 @@ routes.post('/signup-user', function(req, res) {
       //      console.log(err)
             //return res.redirect('/');
           } else {
-            // res.redirect('/dashboard');    
+            // res.redirect('/dashboard');   
+            console.log(user.dataValues.role) 
+
+            // if(user.dataValues.role === "mentor"){
+            //   res.render
+            // }
+
+
             res.json(user);
           }
         });
