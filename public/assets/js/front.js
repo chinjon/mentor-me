@@ -76,6 +76,14 @@ $(document).ready(function() {
     	};
     	$.post("authenticate", user).done(function(user){
              console.log("success", user);
+
+
+             $.get('user-logged-in').done(function(data){
+             	console.log('user info ', data)
+             })
+
+
+
              console.log(user.preference);
              $('.login').hide();
              if(user.role === "mentee") {

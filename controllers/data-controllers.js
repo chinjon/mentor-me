@@ -10,10 +10,21 @@ const router = express.Router();
 
 // https://www.reddit.com/r/node/comments/4ieetf/handling_multiple_sequelize_queries/d2xewcw/
 
-router.get('/', (req, res)=>{
+router.get('/user-logged-in', (req, res)=>{
     // db.User
     // need to make a call for current user?
     // or req.body will contain user info?
+    var loggedIn= req.user.dataValues.username;
+    db.User.findOne({
+        where: {
+            username:loggedUser
+        }
+    }).then((data)=>{
+        console.log(data.dataValues);
+        var userInfo = data.dataValues;
+        res.json(userInfo)
+    })
+
 })
 
 router.get('/suggested-mentors', (req, res)=>{
