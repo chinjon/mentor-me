@@ -54,6 +54,13 @@ if (process.env.NODE_ENV === 'development') {
 
 
 //chat
+
+app.get('/chat-page', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/chat.html'));
+  console.log(req)
+});
+
+
 io.sockets.on('connection', function (socket){
 
   socket.on('connectchat', function (data, callback){
@@ -61,10 +68,10 @@ io.sockets.on('connection', function (socket){
 
 
       db.User.findAll({
-         where: {where: Sequelize.and(
+         where: {where: db.Sequelize.and(
             {username: data.from},
             {sendTo: data.to},
-          Sequelize.or(
+          db.Sequelize.or(
                 {username: data.to}, 
                 {sendTo: data.from}
             )

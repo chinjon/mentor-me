@@ -16,7 +16,7 @@
                                             
                                                 <div class="media-left media-middle">
                                                     <a href="#">
-                                                        <img class="media-object " src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSJAtdpmsMts-0gv1aoa-Js887R9QYr7kMwXWL0id_aShiDjJRy" alt="...">
+                                                        <img class="media-object " src="assets/links/dino.png" alt="...">
                                                     </a>
                                                 </div>
 
@@ -30,7 +30,7 @@
                                        
                             <div class="col-md-9">
                                    <div class="mentorList">
-                                        <a href="#" class="list-group-item active-mentor">My Mentors</a>
+                                        <a href="#" class="list-group-item active-mentee text">My Mentees</a>
                                          <hr>
     
                                 <div class="mentor-list row">
@@ -40,8 +40,8 @@
                                             <img src="https://thesocietypages.org/socimages/files/2009/05/vimeo.jpg" alt="...">
                                         </div>
                                         <div class="caption">
-                                        <h3>userName</h3>
-                                        <button class="button button1">Chat Now!</button>
+                                        <h3>Mentee Name</h3>
+                                        <button onclick="chatWindow()" class="button2 button1 chat-button">Chat Now!</button>
                                         </div> 
                                     </div>
                             
@@ -61,3 +61,8 @@
         </div>
     </div>
 </div>
+ <script>
+function chatWindow() {
+    window.open("/chat-page", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=400,left=500,width=520,height=350");
+    }
+</script>
