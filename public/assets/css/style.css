@@ -191,6 +191,23 @@ h3 {
 }
 
 .button {
+
+    background-color: #04bf9d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button2 {
+
     background-color: #CD4425;
     border: none;
     color: white;
@@ -212,3 +229,47 @@ h3 {
 	margin: auto;
 	font-family: 'Lato', sans-serif;
 }
+
+
+
+.list-group-item.active, .list-group-item.active:hover {
+	background-color: #CD4425;
+	margin: auto;
+	color: #ebebeb;
+}
+
+.list-group-item.active-mentee, .list-group-item.active-mentee:hover {
+	background-color: #CD4425;
+	margin: auto;
+	color: #ebebeb;
+}
+
+/*chat*/
+
+#chat{
+  height:200px;
+  width: 500px;
+  background: white;
+  overflow-y: scroll;
+}
+
+#chatWrap {
+  float: left;
+  border: 1px #000 solid;
+}
+
+.chat-style {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.chat-body {
+	background-color: #04bf9d;
+	margin: 10px;
+}
+
+.video-button {
+	margin-bottom: 25px;
+	margin-top: 15px;
+}
+
