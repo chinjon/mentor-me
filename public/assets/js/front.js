@@ -40,9 +40,9 @@ $(document).ready(function() {
 	$('.submit2').click(function(event){
 		event.preventDefault();
 
-		var email= $("#email-mentor").val().trim();
-		var name = $("#name-mentor").val().trim();
-		var pwd = $("#pwd-mentor").val().trim();
+		var email= $("#email-mentor").val();
+		var name = $("#name-mentor").val();
+		var pwd = $("#pwd-mentor").val();
 		var role = $("#role").val();
 		var pref = $("#sel1").val();
 
@@ -111,7 +111,5 @@ $(document).ready(function() {
        });
 	});
 
-	function myFunction() {
-    window.open("/chat-page", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
-    }
+	
 });

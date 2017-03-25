@@ -21,8 +21,9 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
-<div class="chat-style">
+<body class="chat-body">
+    <div class="chat-style">
+          <h3 style="color: white">Start chatting</h3>
 		
 			                            <div id ="contentWrap">
                                             <div id="chatWrap">
@@ -34,7 +35,13 @@
                                               </div>
                                   </div>
                                         
-	</div>	
- 
+	   </div>	
+    <button onclick="videoWindow()" class="button button2" id="video-button">Start Video</button>
+
+    <script>
+function videoWindow() {
+    window.open("/video-page", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=400,left=500,width=520,height=350");
+    }
+</script>
 </body>
 </html>
