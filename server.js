@@ -11,24 +11,27 @@ cookieParser = require('cookie-parser'),
 session = require('express-session'),
 errorhandler = require('errorhandler');
 
-app.use(express.static('./public'));
-
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-
 const PORT = process.env.PORT || 3000;
 
 app.set('port', PORT);
 
-// Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
+// Sets up the Express app to handle data parsing
 app.use(cookieParser())
 app.set('trust proxy', 1) // trust first proxy
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+app.use(express.static('./public'));
+
+var dbUsers = require('./controllers/data-controllers.js')
+app.use('/', dbUsers);
 
 //need sessions to persist state of user
 app.use(session({
@@ -47,9 +50,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(errorhandler())
 }
 
-var dbUsers = require('./controllers/data-controllers.js')
 
-app.use('/', dbUsers);
 
 
 db.sequelize.sync({ force: false }).then(function() {

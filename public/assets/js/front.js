@@ -74,14 +74,20 @@ $(document).ready(function() {
 
   $(".login").click(function(event) {
     event.preventDefault();
-    var userLogin;
-    userLogin = {
-      email: $("#login-email").val().trim(),
+   
+   var user = {
+      username: $("#login-email").val().trim(),
       password: $("#login-pwd").val().trim()
     };
-    $.post("authenticate", userLogin).done(function(user) {
-      console.log("success", userLogin);
 
+    $.post("authenticate", user).done(function(user) {
+      console.log("success", user);
+
+ // getting suggested users
+	  $.get("suggested-users").done(function(data){
+		console.log("suggested users", data)
+	  });
+	 
       $.get("user-login-data").done(function(data) {
         console.log("user info ", data);
 

@@ -4,15 +4,11 @@ const db = require('../models');
 const router = express.Router();
 
 
-// router.get('/', (req, res)=>{
-//     // db.User
-//     // need to make a call for current user?
-//     // or req.body will contain user info?
-// })
+
 
 // get user login
 router.get('/user-login-data', (req, res)=>{
-    console.log(req);
+   // console.log(req);
     // var loggedUser = req.user.dataValues.username;
     db.User.findOne({
         // where: {
@@ -28,19 +24,21 @@ router.get('/user-login-data', (req, res)=>{
 
 router.get('/suggested-users', (req, res)=>{
     // find all users with same preference
-    var userPref = req.user.dataValues.preference;
-    var userRole = req.user.dataValues.role;
-    // console.log(req.user.dataValues.role);
+    // var userPref = req.user.dataValues.preference;
+    // var userRole = req.user.dataValues.role;
+  
+    console.log(req.User)
+
     db.User.findAll({
         where: {
-            preference: userPref,
-            role: {
-                $notLike: userRole
-            }
+            // preference: userPref,
+            // role: {
+            //     $notLike: userRole
+            // }
         }
     }).then((data)=>{
         //console.log("data is passing")
-        console.log(data)
+        // console.log(data)
         res.json(data)
     })
 });
