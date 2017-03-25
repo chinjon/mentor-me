@@ -39,7 +39,8 @@
                                         </div>
                                         <div class="caption">
                                         <h3>userName</h3>
-                                        <button class="button button1">Chat Now!</button>
+                                        
+                                        <button onclick="myFunction()" class="button button1 chat-button">Chat Now!</button>
                                         </div> 
                                     </div>
                             
@@ -56,3 +57,8 @@
     <!-- /.container --> 
     </div>
 </div>
+    <script>
+function myFunction() {
+    window.open("/chat-page", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+}
+</script>

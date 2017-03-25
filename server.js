@@ -54,3 +54,7 @@ db.sequelize.sync({ force: false }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+app.get('/chat-page', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/chat.html'));
+});
