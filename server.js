@@ -47,6 +47,10 @@ if (process.env.NODE_ENV === 'development') {
   app.use(errorhandler())
 }
 
+var dbUsers = require('./controllers/data-controllers.js')
+
+app.use('/', dbUsers);
+
 
 db.sequelize.sync({ force: false }).then(function() {
 

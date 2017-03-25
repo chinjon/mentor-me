@@ -4,7 +4,8 @@ const saltRounds = 10;
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
     username: { type: DataTypes.STRING, unique: true, allowNull: false, validate: { notEmpty: true}},
-    password: { type: DataTypes.STRING, unique: true, allowNull: false, validate: { notEmpty: true}},
+    name: { type: DataTypes.STRING, unique: false, allowNull: false, validate: { notEmpty: true}},
+    password: { type: DataTypes.STRING, unique: false, allowNull: false, validate: { notEmpty: true}},
     role: { type: DataTypes.STRING, unique: false, allowNull: false, validate: { notEmpty: true}},
     preference: { type: DataTypes.STRING, unique: false, allowNull: false, validate: { notEmpty: true}}
   },{
@@ -13,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         console.log('validPassword password', password);
         console.log('validPassword passwd', passwd);
         bcrypt.compare(password, passwd, function(err, isMatch) {
-          console.log('isMatch', isMatch);
+       //   console.log('isMatch', isMatch);
           if (isMatch) {
             console.log('found match');
             return callback(null, true);
@@ -39,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
               return next(err);
             }      
             user.password = hash;
-            console.log('hash', hash);
+          //  console.log('hash', hash);
             return next(null, user);
         });
     });
