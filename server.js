@@ -18,7 +18,7 @@ app.set('view engine', 'handlebars');
 
 const PORT = process.env.PORT || 3000;
 
-app.set('port', PORT);
+// app.set('port', PORT);
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
