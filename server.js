@@ -61,3 +61,7 @@ app.get('/video-page', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/video.html'));
 });
 
+app.get('/chat-page', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/chat.html'));
+});
+
