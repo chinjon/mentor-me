@@ -58,3 +58,7 @@ db.sequelize.sync({ force: false }).then(function() {
 app.get('/chat-page', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/chat.html'));
 });
+
+app.get('/video-page', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/video.html'));
+});
