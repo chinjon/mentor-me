@@ -60,5 +60,12 @@ $(document).ready(function() {
 		 });
 		}); 
 	 });
-});
+// });
 
+
+
+function myFunction() {
+    window.open("/video-page", "_blank");
+    }
+});
+ 

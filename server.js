@@ -40,6 +40,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 var routes = require('./routes/index.js');
 app.use('/', routes);
 
@@ -55,3 +56,8 @@ db.sequelize.sync({ force: false }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+app.get('/video-page', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/video.html'));
+});
+
