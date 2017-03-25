@@ -61,7 +61,10 @@ routes.get('/login', function(req, res) {
   //   })
   // }
 
+
+
 });
+
 
 // routes.get('/signup/:role', function(req, res) {
 //   var role = req.params.role;
@@ -73,7 +76,11 @@ routes.post('/signup-user', function(req, res) {
 //  console.log(req);
   db.User.find({where: {username: req.email}}).then(function(user) {
     if (!user) {
-      db.User.create({username: req.body.username, name: req.body.name, password: req.body.password, role: req.body.role, preference: req.body.preference}).then(function(user) {
+      db.User.create({username: req.body.username, 
+        name: req.body.name, 
+        password: req.body.password, 
+        role: req.body.role, 
+        preference: req.body.preference}).then(function(user) {
         req.logIn(user, function(err) {
           if (err) {
       //      console.log(err)
@@ -94,4 +101,13 @@ routes.post('/signup-user', function(req, res) {
 
 
 
-module.exports = routes;
+
+
+
+
+
+
+
+module.exports = routes;    
+
+

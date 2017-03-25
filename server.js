@@ -1,10 +1,15 @@
 const express = require('express'),
 path = require('path'),
-app = express(),
+// app = express(),
+app = require('express')();
 db = require('./models'),
 passport = require('passport'),
 passportConfig = require('./config/passport'),
 exphbs  = require('express-handlebars');
+
+const http = require('http');
+server = http.createServer(app);
+io = require('socket.io')(server);
 
 const bodyParser = require('body-parser'),
 cookieParser = require('cookie-parser'),
@@ -48,9 +53,58 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 
-db.sequelize.sync({ force: false }).then(function() {
+//chat
+io.sockets.on('connection', function (socket){
 
-  app.listen(PORT, function() {
+  socket.on('connectchat', function (data, callback){
+    console.log("This is new user:", data);
+
+
+      db.User.findAll({
+         where: {where: Sequelize.and(
+            {username: data.from},
+            {sendTo: data.to},
+          Sequelize.or(
+                {username: data.to}, 
+                {sendTo: data.from}
+            )
+          ),
+          createdAt: {
+            $lt: new Date(),
+            $gt: new Date(new Date() - 24 * 60 * 60 * 1000)
+          }
+        }
+      }).then(function(results){
+        console.log("Sending Old Messages.");
+        socket.emit('load old messages', results);
+
+      });
+    
+  });
+
+  socket.on('send message', function(data, callback){
+    console.log(data)
+
+      db.User.create({
+        username: data.from,
+        sendTo: data.to,
+        msg: data.msg, 
+      }).then(function(results){
+     
+        console.log('post results: ', results);
+
+        io.sockets.emit('new message', {msg: data.msg, nick: data.from});
+
+      });
+
+  });
+
+  
+});
+
+db.sequelize.sync({ force: true }).then(function() {
+
+  server.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 });

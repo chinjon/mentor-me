@@ -212,3 +212,21 @@ h3 {
 	margin: auto;
 	font-family: 'Lato', sans-serif;
 }
+
+
+#chat{
+  height:200px;
+  background: white;
+  overflow-y: scroll;
+
+}
+
+#chatWrap {
+  float: left;
+  border: 1px #000 solid;
+
+}
+
+#contentWrap{
+	display: none;
+}

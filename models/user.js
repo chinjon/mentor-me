@@ -7,7 +7,10 @@ module.exports = function(sequelize, DataTypes) {
     name: { type: DataTypes.STRING, unique: true, allowNull: false, validate: { notEmpty: true}},
     password: { type: DataTypes.STRING, unique: false, allowNull: false, validate: { notEmpty: true}},
     role: { type: DataTypes.STRING, unique: false, allowNull: false, validate: { notEmpty: true}},
-    preference: { type: DataTypes.STRING, unique: false, allowNull: false, validate: { notEmpty: true}}
+    preference: { type: DataTypes.STRING, unique: false, allowNull: false, validate: { notEmpty: true}},
+    message: { type: DataTypes.STRING },
+    sendTo: { type: DataTypes.STRING }
+
   },{
     classMethods: {
       validPassword: function(password, passwd, callback) {
