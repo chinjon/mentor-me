@@ -54,9 +54,8 @@ $(document).ready(function() {
         $.get(
           "suggested-users/" + userPref + "/" + userRole
         ).done(function(users) {
-          console.log("suggested users", users);
           users.forEach((x, i) => {
-            console.log(x.username);
+            $("#suggested-users-list").append("<p>"+x.username+"</p>")
           });
         });
       });

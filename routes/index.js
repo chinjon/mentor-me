@@ -39,7 +39,14 @@ routes.get('/login', function(req, res, next) {
 }, middleware.authenticated, function(req, res) {
   console.log("login fired")
   console.log(req.user.dataValues)
-  res.json(req.user.dataValues)
+
+  var currentUser = {
+    username: req.user.dataValues.username,
+    role: req.user.dataValues.role,
+    preference: req.user.dataValues.preference
+  }
+
+  res.send(currentUser)
 })  
 
 
