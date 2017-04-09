@@ -5,7 +5,17 @@ body {
 }
 
 
-/*nav style*/
+.full {
+	background: url(../links/home-page-bg.png)no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.profile-bg {
+	background-color: #6AB8CC;
+}
+
 .logo {
 	position: relative;
 	display: inline-block;
@@ -30,27 +40,7 @@ body {
 	color:#d7d7d7;
 	font-family: 'Lato', sans-serif;
 	width: 200px;
-}
-
-.navbar-right {
-	margin-top: 12px;
-	margin-right: 10px;
-	color: #d7d7d7;
-	font-family: 'Lato', sans-serif;
-}
-
-.form-login {
-	margin-right: 5px;
-	margin-left: 5px;
-}
-
-.field-color {
-	background-color: hsla(0,0%,53%,0.89);
-}
-
-.login {
-	background-color: #04bf9d;
-	color: #ffffff;
+	
 }
 
 a {
@@ -81,7 +71,7 @@ a {
 }
 
 .margin {
-	margin-top: 100px;
+	margin-top: 60px;
 }
 /* form style */
 .form-style {
@@ -141,74 +131,8 @@ a {
  }
 
 
-/*modal*/
 
-.modal-color {
-	background-color: #04bf9d;
-	color: #ebebeb;
-}
-
-/*profiles*/
 
 #dashboard-info {
 	color: #fff;
-}
-
-.margin-small {
-	margin-top: 50px;
-}
-
-.list-group-item.active, .list-group-item.active:hover {
-	background-color: #04bf9d;
-	margin: auto;
-}
-
-.list-group-item.active-mentor, .list-group-item.active-mentor:hover {
-	background-color: #CD4425;
-	margin: auto;
-}
-
-.list-group-item {
-	background-color: transparent;
-	color: #ebebeb;
-	border: none;
-}
-
-li {
-	font-family: 'Lato', sans-serif;
-	font-size: 15px;
-}
-
-.list-mentor {
-	text-align: center;
-	list-style-type: none;
-	color: #ebebeb;
-	margin-top: 15px;
-}
-
-h3 {
-	text-align: center;
-}
-
-.button {
-    background-color: #CD4425;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-.button1 {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    justify-content: center;
-	display: flex;
-	margin: auto;
-	font-family: 'Lato', sans-serif;
 }
