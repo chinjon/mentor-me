@@ -4,11 +4,6 @@ const fs = require('fs')
 const router = express.Router();
 
 
-// router.get('/', (req, res)=>{
-//     // db.User
-//     // need to make a call for current user?
-//     // or req.body will contain user info?
-// })
 
 // get user login
 router.get('/user-login-data', (req, res)=>{
@@ -19,17 +14,23 @@ router.get('/user-login-data', (req, res)=>{
             username: loggedUser
         }
     }).then((data)=>{
-        res.json(data)
+        res.send(data)
     })
 })
 
 //  
 
-router.get('/suggested-users', (req, res)=>{
+router.get('/suggested-users/:preference/:role', (req, res)=>{
     // find all users with same preference
-    var userPref = req.user.dataValues.preference;
-    var userRole = req.user.dataValues.role;
-    var findRole;
+    var pref = req.params.preference;
+    var userRole = req.params.role;
+
+   // console.log(pref, searchRole)
+
+   // console.log(req)
+    // var userPref = req.user.dataValues.preference;
+    // var userRole = req.user.dataValues.role;
+    // var findRole;
     if(userRole === "mentee"){
         findRole = "mentor"
     } else if(userRole === "mentor"){
@@ -38,13 +39,13 @@ router.get('/suggested-users', (req, res)=>{
     // console.log(req.user.dataValues.role);
     db.User.findAll({
         where: {
-            preference: userPref,
-            role: findRole
+            preference: pref,
+            role: userRole
         }
     }).then((data)=>{
         //console.log("data is passing")
-        console.log(data)
-        res.json(data)
+      //  console.log(data)
+        res.send(data)
     })
 });
 
