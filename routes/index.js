@@ -75,7 +75,7 @@ routes.post('/signup-user', function(req, res) {
 //  console.log(req);
   db.User.find({where: {username: req.email}}).then(function(user) {
     if (!user) {
-      db.User.create({username: req.body.username, name: req.body.name, password: req.body.password, role: req.body.role, preference: req.body.preference}).then(function(user) {
+      db.User.create({username: req.body.username, password: req.body.password, role: req.body.role, preference: req.body.preference}).then(function(user) {
         req.logIn(user, function(err) {
           if (err) {
       //      console.log(err)
